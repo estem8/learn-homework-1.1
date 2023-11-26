@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>FlaskApp</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <h2>Welcome to FlaskApp!</h2>
-    <h3>{{ data }}</h3>
-    <h3>{{ data['city'] }}</h3>
-    <h3>{{ data['city'] }}</h3>
-    <h3>latitude: {{ data['latitude'] }}</h3>
-    <h3>longitude: {{ data['longitude'] }}</h3>
+    <div class="card">
+        <h2>Welcome to FlaskApp!</h2>
+        <div class="data">
+            <h3>Взято из get_my_ip {{ data['my_ip'] }}</h3>
+            <h3>Город по IP: {{ data['city'] }}</h3>
+            <h3>Страна по IP: {{ data['country'] }}</h3>
+            <h3>Latitude по "forecast": {{ data['latitude'] }}</h3>
+            <h3>Longitude по "forecast": {{ data['longitude'] }}</h3>
+            <h3>Погода взято из forecast: {{ data['weather'] }}</h3>
+            <h3>Город по координатам: {{ data['city_by_cord'] }}</h3>
+        </div>
+    </div>
 </body>
 </html>

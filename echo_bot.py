@@ -11,10 +11,8 @@ async def start(update, context):
     await update.message.reply_text("Enter city")
 
 async def handle_city(update, context):
-    city = update.message.text
-    data={'city':city}
-    # print(data)
-    requests.post(WEBHOOK_URL,json=data)
+    print(update)
+    requests.post(WEBHOOK_URL, json=update)
 
 def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()

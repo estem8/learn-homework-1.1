@@ -1,4 +1,4 @@
-from weather import get_weather, get_my_ip, get_geo_by_ip, get_city_name_by_coord
+from classic_weather import get_weather, get_my_ip, get_geo_by_ip, get_city_name_by_coord
 
 def generate_template()-> dict:
     """Генератор data для render template"""    

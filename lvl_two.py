@@ -10,7 +10,7 @@ class Weather:
 
     @staticmethod
     def collect_data() -> dict:
-        data= {} 
+        data = {} 
         url = 'https://api.ipify.org'
         params = {'format':'json'}
         result = requests.get(url=url,params=params).json()
@@ -31,7 +31,6 @@ class Weather:
         lat = data['lat']
         city = data['city']
         return cls(ip, lon, lat, city)
-
 
 
 # w = Weather

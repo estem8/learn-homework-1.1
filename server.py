@@ -29,7 +29,7 @@ def lvl_one():
 #Через ООП Класс Weather - работает
 @app.route('/lvl_two')
 def lvl_two():
-    data = Weather.create_data_with_my_ip()
+    data = Weather_two.create_data_with_my_ip()
     print(data.__dict__)
     return render_template('index.html', data = data)
 

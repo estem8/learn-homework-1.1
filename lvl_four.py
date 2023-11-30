@@ -12,23 +12,9 @@ class City:
         else:
             self.lon = lon
             self.lat = lat
-
-
-    # @property
-    # def cord(self):
-    #     return self.lon, self.lat
     
-    # @cord.setter
-    # def cord(self, num):
-    #     lo,la = num
-    #     if abs(lo) <= 90 and abs(la) <= 90:
-    #         self.lon = lo
-    #         self.lat = la
-    #     else:
-    #         print('Получены не корректные данные')
-    
-    @staticmethod
-    def get_cord_from_web():
+    # @staticmethod
+    def get_cord_from_web(self):
         url='https://api.ipify.org'
         ip_data = requests.get(url).text
 
@@ -47,13 +33,12 @@ class Weather(City):
         else:
             self.temperature = temperature
             self.description = description
-
-    @staticmethod        
+    
+    # @staticmethod УДАЛИТЬ :) и больше никогда не использовать
     def get_weather(self):
         weather_url = 'http://api.openweathermap.org/data/2.5/weather'
-        name = City(self.name)
         params = {
-            'q' : name,
+            'q' : self.name,
             'appid' : weather_api_key,
         }
         result = requests.get(url=weather_url,params=params).json()
@@ -65,6 +50,3 @@ class Weather(City):
 
 w = Weather()
 print(w.__dict__)
-
-# w = City()
-# print(w.__dict__)

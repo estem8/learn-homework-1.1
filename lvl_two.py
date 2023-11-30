@@ -8,7 +8,7 @@ class Weather:
         self.lat = lat
         self.city = city
 
-    @staticmethod
+    @staticmethod #тут работает но в lvl_four вызвало проблемы
     def collect_data() -> dict:
         data = {} 
         url = 'https://api.ipify.org'

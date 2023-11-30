@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Card</title>
+    <style>
+        .weather-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .weather-icon {
+            width: 100px;
+            height: 100px;
+            margin: 10px auto;
+        }
+        .weather-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-card">
+        <img class="weather-icon" src="{{ weather_icon_url }}" alt="Weather Icon">
+        <div class="weather-info">{{ city }}</div>
+        <div class="weather-info">{{ temperature }}°C</div>
+        <div class="weather-info">{{ description }}</div>
+    </div>
+</body>
+</html>

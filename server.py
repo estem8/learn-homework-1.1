@@ -7,7 +7,8 @@ from os.path import join, dirname
 import os
 
 from lvl_one import generate_template
-from lvl_two import Weather
+from lvl_two import Weather as Weather_two
+from lvl_four import Weather as Weather_four
 
 from setting import *
 
@@ -45,9 +46,9 @@ def receive_update():
 #Через ООП наследование классов
 @app.route('/lvl_four')
 def lvl_four():
-    data = Weather()
+    data = Weather_four()
     print(data.__dict__)
-    return render_template('index.html', data = data)
+    return render_template('lvl_four.html', data = data)
 
 if __name__=='__main__':
     app.run(debug=True)

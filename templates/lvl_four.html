@@ -9,7 +9,7 @@
             border: 1px solid #ccc;
             border-radius: 8px;
             padding: 20px;
-            width: 300px;
+            width: 200px;
             text-align: center;
             margin: 20px auto;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -26,11 +26,14 @@
     </style>
 </head>
 <body>
-    <div class="weather-card">
-        <img class="weather-icon" src="{{ weather_icon_url }}" alt="Weather Icon">
-        <div class="weather-info">{{ city }}</div>
-        <div class="weather-info">{{ temperature }}°C</div>
-        <div class="weather-info">{{ description }}</div>
+    <div class="data weather-card">
+        <img class="weather-icon" src="http://openweathermap.org/img/wn/{{data['weather_icon']}}@2x.png" alt="Weather Icon">
+        <div class="weather-info">Город: {{ data['name'] }}</div>
+        <div class="weather-info">Longitude: {{ data['lon'] }}</div>
+        <div class="weather-info">Latitude: {{ data['lat'] }}</div>
+        <div class="weather-info">Temp: {{ data['temperature'] }} F</div>
+        <div class="weather-info">{{ data['description'] }}</div>
+        
     </div>
 </body>
 </html>

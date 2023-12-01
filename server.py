@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 from os.path import join, dirname
 import os
 
-from lvl_one import generate_template
-from lvl_two import Weather as Weather_two
-from lvl_four import Weather as Weather_four
+from src.lvl_one import generate_template
+from src.lvl_two import Weather as Weather_two
+from src.lvl_four import Weather as Weather_four
 
 from setting import *
 
@@ -19,6 +19,12 @@ def get_from_env(key):
     dotenv_path = join(dirname(__file__), '.env')
     load_dotenv(dotenv_path)
     return os.environ.get(key)
+
+#Через ООП наследование классов
+@app.route('/')
+def lvl_four():
+    data = Weather_four()
+    return render_template('lvl_four.html', data = data)
 
 #Обычными функциями - работает
 @app.route('/lvl_one')
@@ -40,12 +46,6 @@ def receive_update():
         chat_id = request.json['chat']['id']
         send_message(chat_id)
     return {'ok': True}
-
-#Через ООП наследование классов
-@app.route('/lvl_four')
-def lvl_four():
-    data = Weather_four()
-    return render_template('lvl_four.html', data = data)
 
 if __name__=='__main__':
     app.run(debug=True)

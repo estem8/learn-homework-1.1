@@ -57,6 +57,3 @@ class Weather(City):
         weather_icon = result['weather'][0]['icon']
 
         return temperature, description, weather_icon
-
-w = City()
-print(w.__dict__)

@@ -31,7 +31,3 @@ class Weather:
         lat = data['lat']
         city = data['city']
         return cls(ip, lon, lat, city)
-
-
-# w = Weather
-# print(w.collect_data())

@@ -30,7 +30,6 @@ def lvl_one():
 @app.route('/lvl_two')
 def lvl_two():
     data = Weather_two.create_data_with_my_ip()
-    print(data.__dict__)
     return render_template('index.html', data = data)
 
 
@@ -38,7 +37,6 @@ def lvl_two():
 @app.route('/lvl_three', methods=['GET', 'POST'])
 def receive_update():
     if request.method == 'POST':
-        print(request.json)
         chat_id = request.json['chat']['id']
         send_message(chat_id)
     return {'ok': True}
@@ -47,7 +45,6 @@ def receive_update():
 @app.route('/lvl_four')
 def lvl_four():
     data = Weather_four()
-    print(data.__dict__)
     return render_template('lvl_four.html', data = data)
 
 if __name__=='__main__':

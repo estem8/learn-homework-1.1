@@ -1,4 +1,4 @@
-[![pylint](https://img.shields.io/badge/pylint-1.95-red?logo=python&logoColor=whitehttps://img.shields.io/badge/pylint-1.95-red?logo=python&logoColor=white)
+[![pylint](https://img.shields.io/badge/pylint-1.95-red?logo=python&logoColor=white)
 
 # server.py
 Тренировочный Flask проект получения погоды

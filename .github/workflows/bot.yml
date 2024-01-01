@@ -15,9 +15,9 @@ jobs:
             Commit message: ${{ github.event.commits[0].message }}
             
             Repository: ${{ github.repository }}
-            
+            Lint Status ${{ [pylint]() }}
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
-            
+
       - name: linter         
         uses: Silleellie/pylint-github-action@v1
         with:

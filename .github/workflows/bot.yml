@@ -21,3 +21,4 @@ jobs:
           message: |
             *Pylint Report*:
             $(cat pylint_report.txt)
+            ![PyLint](https://img.shields.io/badge/pylint-1.95-red?logo=python&logoColor=white)

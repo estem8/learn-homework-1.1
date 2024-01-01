@@ -1,33 +1,27 @@
-name: Flake8
+name: Lint
 
-on:
-  push:
-    branches:
-      - main
+on:  # yamllint disable-line rule:truthy
+  push: null
+  pull_request: null
 
 jobs:
-  flake8:
+  build:
+    name: Lint
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+      # To report GitHub Actions status checks
+      statuses: write
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Install Flake8
-        run: pip install flake8
-      - name: Run Flake8
-        run: flake8 .
-      - name: Send Flake8 results to Telegram
-        run: |
-          import python-telegram-bot
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-          bot = python-telegram-bot.Bot(TOKEN)
-          errors = []
-          for file in ["./**/*.py", "./**/*.pyi"]:
-            for error in flake8.run_file(file):
-              errors.append(error)
-
-          bot.send_message(chat_id=CHAT_ID, text="Flake8 results:")
-          for error in errors:
-            bot.send_message(chat_id=CHAT_ID, text=error)
-
-      env:
-        TOKEN: ${{ secrets.BOT_TOKEN }}
-        CHAT_ID: ${{ secrets.CHAT_ID }}
+      - name: Super-linter
+        uses: super-linter/super-linter@v5.7.2  # x-release-please-version
+        env:
+          DEFAULT_BRANCH: main
+          # To report GitHub Actions status checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

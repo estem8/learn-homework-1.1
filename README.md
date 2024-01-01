@@ -1,4 +1,5 @@
 [![pylint]()](https://redirect/link)
+
 # server.py
 Тренировочный Flask проект получения погоды
 1. По ip пользователя 

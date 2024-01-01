@@ -17,3 +17,9 @@ jobs:
             Repository: ${{ github.repository }}
             
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            
+      - name: linter         
+        uses: Silleellie/pylint-github-action@v1
+        with:
+          package-path: src
+          python-version: 3.11

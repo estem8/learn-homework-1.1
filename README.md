@@ -1,7 +1,7 @@
 ![pylint](https://img.shields.io/badge/pylint-1.95-red?logo=python&logoColor=white)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
-# server.py
+# server.py 
 Тренировочный Flask проект получения погоды
 1. По ip пользователя 
 2. По прямому запросу города.
